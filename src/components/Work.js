@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import project1 from '../assets/project1.png'
+import project2 from '../assets/project2.png'
 export default function Work() {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -31,9 +32,8 @@ export default function Work() {
     <section
       ref={sectionRef}
       id="work"
-      className={`min-h-screen flex flex-col lora items-center justify-center bg-gray-100 px-4 py-12 transition-opacity duration-1000 ease-out ${
-        visible ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`min-h-screen flex flex-col lora items-center justify-center bg-gray-100 px-4 py-12 transition-opacity duration-1000 ease-out ${visible ? 'opacity-100' : 'opacity-0'
+        }`}
     >
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold bold-phrase">My Work</h2>
@@ -44,12 +44,12 @@ export default function Work() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
         {/* Proyecto 1 */}
         <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
-        <img
-  src={project1}
-  alt="Project1"
-  className="mx-auto mb-6 rounded-lg shadow-lg max-w-[300px] max-h-[200px]"  // Limitando ancho a 300px y altura a 200px
+          <img
+            src={project1}
+            alt="Project1"
+            className="mx-auto mb-6 rounded-lg shadow-lg max-w-[300px] max-h-[200px]"  // Limitando ancho a 300px y altura a 200px
 
-/>
+          />
 
           <h3 className="text-xl font-bold">Looker Report</h3>
           <p className="text-gray-600 mt-2">
@@ -57,8 +57,9 @@ export default function Work() {
           </p>
           {/* Botones con efecto 3D */}
           <div className="flex justify-center space-x-4 mt-6">
-  <Button3D text="Visit Project" href="https://lookerstudio.google.com/embed/reporting/40333cb3-0f25-4e65-9255-17f14045db54/page/gv5EE" />
-</div>
+            <Button3D text="View project" href="https://lookerstudio.google.com/embed/reporting/40333cb3-0f25-4e65-9255-17f14045db54/page/gv5EE" />
+            <Button3D text="Repository" href="https://github.com/veilhdmi/Shopify-Bulk-Python-main"></Button3D>
+          </div>
 
 
         </div>
@@ -66,17 +67,18 @@ export default function Work() {
         {/* Proyecto 2 */}
         <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
           <img
-            src="path-to-your-image2.jpg"
+            src={project2}
             alt="Project2"
-            className="mx-auto mb-6 rounded-lg shadow-lg"
+            className="mx-auto mb-6 rounded-lg shadow-lg max-w-[300px] max-h-[200px]"
           />
-          <h3 className="text-xl font-bold">COMING SOON</h3>
+          <h3 className="text-xl font-bold">Attrition Prediction</h3>
           <p className="text-gray-600 mt-2">
-          Cooming soon....
+            Prediction models to anticipate attrition with Python and Scikit-Learn.
           </p>
           {/* Botones con efecto 3D */}
           <div className="flex justify-center space-x-4 mt-6">
-            <Button3D text="Visit Webinar Turkey" />
+            <Button3D text="View project" href="https://colab.research.google.com/drive/1S64foz9glqjWB7Upn_v1ODHz_m5NgWbs?usp=sharing" />
+            <Button3D text="Repository" href="https://github.com/veilhdmi/AtrittionPrediction"></Button3D>
           </div>
         </div>
       </div>
@@ -86,7 +88,7 @@ export default function Work() {
 
 function Button3D({ text, href }) {
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block my-3">
       <div className="absolute top-1 left-0 w-full h-full bg-black rounded-full py-5"></div>
       <a
         href={href}  // Agregamos la ruta aquí

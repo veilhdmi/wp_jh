@@ -1,15 +1,6 @@
 import React from 'react';
-import pythonIcon from '../assets/python.png';
-import RIcon from '../assets/R.png';
-import TableuIcon from '../assets/tableu.png';
-import PowerIcon from '../assets/power.png';
-import SqlIcon from '../assets/sql.png';
-import SheetsIcon from '../assets/sheets.png';
-import JavaIcon from '../assets/js.png';
-import ReactIcon from '../assets/react.png';
-import NodeIcon from '../assets/node.png';
-import PostgreIcon from '../assets/postgre.png';
-import MongoIcon from '../assets/mongo.png';
+import { FaPython, FaReact, FaNodeJs } from 'react-icons/fa'; // FontAwesome
+import { SiR, SiTableau, SiPowerbi, SiMongodb, SiPostgresql, SiJavascript, SiMysql, SiLooker } from 'react-icons/si'; // SimpleIcons
 
 export default function Skills() {
   return (
@@ -47,26 +38,26 @@ export default function Skills() {
 function SkillCard({ skill }) {
   return (
     <div className="flex flex-col items-center justify-center bg-white rounded-xl shadow-lg p-4">
-      <img src={skill.icon} alt={skill.name} className="h-12 w-12 mb-4" /> {/* Tamaño más pequeño */}
+      <skill.icon className="h-12 w-12 mb-4 text-gray-800" /> {/* Icono */}
       <p className="text-lg font-semibold text-gray-800">{skill.name}</p>
     </div>
   );
 }
 
-// Datos de las habilidades (UX/UI Design y Tools)
+// Datos de las habilidades (Data Analytics y Web Development)
 const uxUiSkills = [
-  { name: "Python", icon: pythonIcon },
-  { name: "R", icon: RIcon },
-  { name: "Tableu", icon: TableuIcon },
-  { name: "PowerBI", icon: PowerIcon },
-  { name: "MySQL/SQL", icon: SqlIcon },
-  { name: "Google Sheets", icon: SheetsIcon },
+  { name: "Python", icon: FaPython },
+  { name: "R", icon: SiR },
+  { name: "Tableau", icon: SiTableau },
+  { name: "PowerBI", icon: SiPowerbi },
+  { name: "MySQL/SQL", icon: SiMysql },
+  { name: "Looker", icon: SiLooker }, // No hay icono oficial, pero puedes elegir
 ];
 
 const toolsSkills = [
-  { name: "JavaScript", icon: JavaIcon },
-  { name: "React", icon: ReactIcon },
-  { name: "NodeJS", icon: NodeIcon },
-  { name: "PostgreSQL", icon: PostgreIcon },
-  { name: "MongoDB", icon: MongoIcon },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "React", icon: FaReact },
+  { name: "NodeJS", icon: FaNodeJs },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
 ];
