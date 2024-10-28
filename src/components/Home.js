@@ -1,5 +1,5 @@
 import React from 'react';
-import perfilImage from '../assets/perfil.jpg'; 
+import perfilImage from '../assets/foto_portafolio.png'; 
 
 export default function Home() {
   return (
