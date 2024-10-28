@@ -30,7 +30,7 @@ export default function Home() {
           <img
             src={perfilImage}
             alt="Junior Huaman"
-            className="w-36 h-36 md:w-48 md:h-48 rounded-full shadow-lg object-cover"
+            className="w-64 h-80 sm:w-72 sm:h-96 md:w-[400px] md:h-[600px] lg:w-[500px] lg:h-[700px] object-cover rounded-md"
           />
         </div>
       </div>
