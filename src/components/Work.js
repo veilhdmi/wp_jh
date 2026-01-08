@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
+import project3 from '../assets/project3.jpg'
 export default function Work() {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -42,6 +43,27 @@ export default function Work() {
 
       {/* Contenedor para los proyectos */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
+        {/* Proyecto 3 */}
+        <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
+          <img
+            src={project3}
+            alt="Project3"
+            className="mx-auto mb-6 rounded-lg shadow-lg max-w-[300px] max-h-[200px]"  // Limitando ancho a 300px y altura a 200px
+
+          />
+
+          <h3 className="text-xl font-bold">Olist End-to-End Pipeline</h3>
+          <p className="text-gray-600 mt-2">
+            An end-to-end ELT pipeline transforming Olist data into strategic insights using dbt and Snowflake.
+          </p>
+          {/* Botones con efecto 3D */}
+          <div className="flex justify-center space-x-4 mt-6">
+            <Button3D text="View project" href="https://lookerstudio.google.com/embed/reporting/ac70e827-abed-456c-9478-6caa307dc678/page/xIAkF" />
+            <Button3D text="Repository" href="https://github.com/veilhdmi/ecommerce_data_project"></Button3D>
+          </div>
+
+
+        </div>
         {/* Proyecto 1 */}
         <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
           <img
@@ -81,6 +103,7 @@ export default function Work() {
             <Button3D text="Repository" href="https://github.com/veilhdmi/AtrittionPrediction"></Button3D>
           </div>
         </div>
+        
       </div>
     </section>
   );

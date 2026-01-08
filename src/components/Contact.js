@@ -6,7 +6,7 @@ export default function Contact() {
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold">Contact Me</h2>
         <p className="mt-4">Email: juniorhuamanro@gmail.com</p>
-        <p className="mt-4">Phone: +51 995 359 625</p>
+        <p className="mt-4">Phone: +34 661 183 711</p>
         {/* Añade más formas de contacto si lo deseas */}
       </div>
     </section>
