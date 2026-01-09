@@ -22,7 +22,7 @@ const About = () => {
           />
           <h3 className="text-lg font-semibold">Universidad de Lima</h3>
           <p className="text-gray-500">Bachelor’s Degree, Systems Engineering</p>
-          <p className="text-gray-500">April 2019 , December 2025</p>
+          <p className="text-gray-500">April 2019 , December 2024</p>
         </div>
         {/* Google */}
         <div className="text-center">
