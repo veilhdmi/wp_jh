@@ -20,7 +20,7 @@ export default function Home() {
           </div>
 
           <p className="text-gray-700 text-md sm:text-lg lora max-w-lg">
-          with a passion for data analysis and developing creative technology solutions.
+          with a passion for data and developing creative technology solutions.
 
           </p>
         </div>
