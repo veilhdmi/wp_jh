@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import project1 from '../assets/project1.png'
 import project2 from '../assets/project2.png'
 import project3 from '../assets/project3.jpg'
+import project4 from '../assets/dashboard.jpg'
+import iqc_review from '../assets/video.gif'
 export default function Work() {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -29,6 +31,8 @@ export default function Work() {
     };
   }, []);
 
+  const [showPreview, setShowPreview] = useState(false);
+
   return (
     <section
       ref={sectionRef}
@@ -43,6 +47,51 @@ export default function Work() {
 
       {/* Contenedor para los proyectos */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl">
+        {/* Proyecto IQC */}
+        <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
+          <img
+            src={project4}
+            alt="Project4"
+            className="mx-auto mb-6 rounded-lg shadow-lg max-w-[300px] max-h-[200px]"  // Limitando ancho a 300px y altura a 200px
+
+          />
+
+          <h3 className="text-xl font-bold">End-To-End Quality Control Pipeline</h3>
+          <p className="text-gray-600 mt-2">
+            An end-to-end ELT pipeline modeling data into actionable insights using dbt and Snowflake.
+          </p>
+          {/* Botones con efecto 3D */}
+          <div className="flex justify-center space-x-4 mt-6">
+            <div
+              className="relative"
+              onMouseEnter={() => setShowPreview(true)}
+              onMouseLeave={() => setShowPreview(false)}
+            >
+              <Button3D 
+                text="View project" 
+                href="https://lookerstudio.google.com/embed/reporting/ac70e827-abed-456c-9478-6caa307dc678/page/xIAkF" 
+              />
+
+              {showPreview && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+                  
+                  {/* Fondo ligeramente oscuro */}
+                  <div className="absolute inset-0 bg-black/30 backdrop-blur-sm"></div>
+
+                  {/* GIF grande centrado */}
+                  <img
+                    src={iqc_review}
+                    alt="IQC Preview"
+                    className="relative max-w-[50vw] max-h-[50vh] rounded-2xl shadow-2xl border-4 border-white animate-fadeIn"
+                  />
+                </div>
+              )}
+            </div>
+            <Button3D text="Repository" href="https://github.com/veilhdmi/qc_project"></Button3D>
+          </div>
+
+
+        </div>
         {/* Proyecto 3 */}
         <div className="bg-white rounded-xl shadow-lg p-6 text-center relative transition-transform transform hover:scale-105 duration-300">
           <img
