@@ -10,26 +10,30 @@ export default function Work() {
 
   // Usamos Intersection Observer para activar la transición
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.disconnect(); // Una vez visible, no seguimos observando
-          }
-        });
-      },
-      { threshold: 0.3 } // Umbral: el 30% de la sección tiene que estar visible para activar
-    );
+  const currentSection = sectionRef.current;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  if (currentSection) {
+    observer.observe(currentSection);
+  }
+
+  return () => {
+    if (currentSection) {
+      observer.unobserve(currentSection);
     }
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+  };
+}, []);
 
   const [showPreview, setShowPreview] = useState(false);
 
