@@ -73,7 +73,7 @@ export default function Work() {
             >
               <Button3D 
                 text="View project" 
-                href="https://lookerstudio.google.com/embed/reporting/ac70e827-abed-456c-9478-6caa307dc678/page/xIAkF" 
+                href="" 
               />
 
               {showPreview && (
